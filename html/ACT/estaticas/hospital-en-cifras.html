@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Bienvenido al Complejo Médico más completo del Ecuador">
+<meta name="keywords" content="hospital,metropolitano,menús,superiores, salud, hospital, emergencia, médicos, medicina">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="shortcut icon" href="images/favicon.ico">
+<title>HOSPITAL METROPOLITANO</title>
+
+<link href="css/css-hospital.css" rel="stylesheet" type="text/css" />
+<link href="css/queries-hospital.css" rel="stylesheet" type="text/css" />
+<link href="css/fotorama.css" rel="stylesheet" type="text/css" />
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/fotorama.js"></script>
+
+<script>
+$(document).ready(function() {
+    $("#video-docs").click(function(){
+		$(".cont-video-doctores").fadeIn();
+		})
+	$("#btn-cerrar").click(function(){
+		$(".cont-video-doctores").fadeOut();
+		});	
+});
+</script>
+
+</head>
+
+<body>
+<!-- HEADER - MENU -->
+<header class="h-metropolitano-int" >
+	<section class="cont-menu">
+    	<div class="logo-hm"><img src="images/logo-hm.png" alt="logo hospital metropolitano"/></div>
+        <nav class="nav-metropolitano">
+        	<ul class="nav-submenu">
+            	<li><a href="#">NOSOTROS</a>
+                	<ul class="nav-submenu1">
+                    	<li><a href="#">HISTORIA</a></li>
+                        <li><a href="#">MISIÓN Y VISIÓN</a></li>
+                        <li><a href="#">HOSPITAL EN CIFRAS</a></li>
+                        <li><a href="#">CONVENIOS</a></li>
+                        <li><a href="#">DERECHOS Y OBLIGACIONES</a></li>
+                        <li><a href="#">AUTORIDADES</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">SERVICIOS</a></li>
+                <li><a href="#">NUESTROS MÉDICOS</a>
+                	<ul class="nav-submenu1" id="n-medicos-submenu">
+                    	<li>DEPARTAMENTO DE:</li>
+                        <li><a href="#">MEDICINA INTERNA</a>
+                        	<ul class="nav-submenu2">
+                            	<li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a>
+                                	<ul class="nav-submenu3">
+                                    	<li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">CIRUGÍA</a></li>
+                        <li><a href="#">GINECOLOGÍA</a></li>
+                        <li><a href="#">PEDIATRIA</a></li>
+                        <li><a href="#">EMERGENCIA</a></li>
+                    </ul>	
+                </li>
+                <li><a href="#">EDUCACIÓN E INFORMACIÓN</a></li>
+                <li><a href="#">PACIENTES</a></li>
+                <li><a href="#">NOTICIAS</a></li>
+                <li><a href="#">BIENESTAR</a></li>
+            </ul>
+        </nav>
+        <div class="position-login">
+        	<div class="pos-login"><a href="#">LOGIN</a> / <a href="#">REGISTRATE</a></div>
+            <div class="pos-buscar"><input type="text" class="input-buscar"/></div>
+            <div class="pos-bnoticia">&nbsp;</div>
+        </div>
+    </section>
+</header>
+<!-- CONTENIDO PAG -->
+<section class="contenido-pagina">
+	<div class="contenido-interno">
+    	<!-- SUBMENU PAG INTERNAS -->
+        <div class="submenu-interno">
+        	<h1>Nosotros</h1>
+            <ul>
+            	<li class="selected-opc">HISTORIA</li>
+            	<li><a href="#">MISIÓN Y VISIÓN</a></li>
+            	<li><a href="#">HOSPITAL EN CIFRAS</a></li>
+            	<li><a href="#">CONVENIOS</a></li>
+            	<li><a href="#">DERECHOS Y OBLIGACIONES</a></li>
+                <li><a href="#">AUTORIDADES</a></li>
+            </ul>
+        </div>
+        <!-- -->
+        <div class="contenido-pag-internas">
+        	<h1>Hospital en cifras</h1>
+            <img src="images/img-hospital.jpg" alt="imagen hospital"/><br/><br/>
+            <table cellspacing="0" cellpadding="0">
+<colgroup><col width="610">
+<col width="232">
+</colgroup><tbody><tr>
+<td width="610"><strong>Volúmenes HM</strong></td>
+<td align="right">2013</td>
+</tr>
+<tr><td>Admisiones</td>
+<td align="right">11.043</td>
+</tr>
+<tr><td>Días Paciente</td>
+<td align="right">33.601</td>
+</tr>
+<tr>
+<td>Censo Diario</td>
+<td align="right">92</td>
+</tr>
+<tr>
+<td>Promedio Estadía</td>
+<td align="right">3,04</td>
+</tr>
+<tr>
+<td>Camas Disponibles</td>
+<td align="right">1476</td>
+</tr>
+<tr>
+<td>Porcentaje Ocupación</td>
+<td align="right">75%</td>
+</tr>
+<tr>
+<td>Egresos</td>
+<td align="right">11.084</td>
+</tr>
+<tr>
+<td>Hospitalización</td>
+<td align="right">31.025</td>
+</tr>
+<tr>
+<td>Quirófanos</td>
+<td align="right">9.884</td>
+</tr>
+<tr>
+<td>Endoscopía</td>
+<td align="right">5.966</td>
+</tr>
+<tr>
+<td>Recuperación</td>
+<td align="right">9.451</td>
+</tr>
+<tr>
+<td>Cuidados Intensivos</td>
+<td align="right">2.097</td>
+</tr>
+<tr>
+<td>Partos / Cesáreas</td>
+<td align="right">907</td>
+</tr>
+<tr>
+<td>Neonatología</td>
+<td align="right">3.856</td>
+</tr>
+<tr>
+<td>Extramurales</td>
+<td align="right">599</td>
+</tr>
+<tr>
+<td>Emergencia</td>
+<td align="right">30.433</td>
+</tr>
+<tr>
+<td>Hospital del día</td>
+<td align="right">5.883</td>
+</tr>
+<tr>
+<td>Chequeo Médico</td>
+<td align="right">1.088</td>
+</tr>
+<tr>
+<td>Metroláser</td>
+<td align="right">1.395</td>
+</tr>
+
+
+
+</tbody></table>
+<br>
+<table cellspacing="0" cellpadding="0">
+<colgroup><col width="610">
+<col width="232">
+</colgroup><tbody><tr>
+<td width="610"><strong>Complejo médico</strong></td>
+<td align="right" width="232">2012</td>
+</tr>
+<tr>
+<td>m<sup>2</sup> de construcción hospitalaria</td>
+<td align="right">42541,51</td>
+</tr>
+<tr>
+<td>m<sup>2</sup> de construcción total</td>
+<td align="right">83000</td>
+</tr>
+<tr>
+<td>Plazas de parqueo hospitalario</td>
+<td align="right">280</td>
+</tr>
+<tr>
+<td>Plazas de parqueo total</td>
+<td align="right">1080</td>
+</tr>
+<tr>
+<td>Camas</td>
+<td align="right">147</td>
+</tr>
+<tr>
+<td>Quirófanos</td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td>Empleados</td>
+<td align="right">867</td>
+</tr>
+<tr>
+<td>Médicos activos</td>
+<td align="right">255</td>
+</tr>
+<tr>
+<td>Médicos residentes</td>
+<td align="right">77</td>
+</tr>
+<tr>
+<td>Médicos asociados</td>
+<td align="right">370</td>
+</tr>
+<tr>
+<td>Honorarios</td>
+<td align="right">7</td>
+</tr>
+</tbody></table>
+<br/><br/>
+        </div>
+        <!-- -->
+    </div>
+</section>
+<!-- BANNERS -->
+<section class="banner-promo">
+	<div class="info-promo">
+    	<div class="fotorama" data-width="100%" data-fit="cover" data-nav="none" data-transition="dissolve" data-loop="true" data-arrows="false" data-autoplay="7000">        	
+        	<img src="images/banners/banner.jpg" alt="banners metropolitano"/>
+			<img src="images/banners/banner2.jpg" alt="banners metropolitano"/>
+			<img src="images/banners/banner3.jpg" alt="banners metropolitano"/>
+        </div>
+    </div>
+    <div class="info-promo2">
+    	<div class="tit-promo2"><img src="images/tit-promo2.jpg" alt="tit promo"/><img src="images/banner-promo.jpg" alt="banner promocion"/></div>
+    </div>
+</section>
+<!-- CIERRE -->
+<section class="cierre-web">
+	<div class="cierre-tam">
+    	<!-- NOTICIAS -->
+    	<div class="noticias-home">
+        	<h2>NOTICIAS</h2>
+            <div class="cont-noticia">
+            	<img src="images/noticia1.jpg" alt="imagen noticia"/>
+                <div class="cont-info-noticias">
+                	<h2>HABITACIONES ELITE HABITACIONES ELITE</h2>
+                    <p>Es un importante examen, que sirve para descartar precozmente, durante el periodo neonatal...</p>
+               		<a href="#">LEER MÁS</a>
+                </div>
+            </div>
+            <div class="cont-noticia">
+            	<img src="images/noticia2.jpg" alt="imagen noticia"/>
+                <div class="cont-info-noticias">
+                	<h2>HABITACIONES ELITE HABITACIONES ELITE</h2>
+                    <p>Es un importante examen, que sirve para descartar precozmente, durante el periodo neonatal...</p>
+               		<a href="#">LEER MÁS</a>
+                </div>
+            </div>
+        </div>
+        <!-- BUSCADOR -->
+        <div class="cont-buscador">
+        	<h2>BUSCAR</h2>
+            <h3>Médico</h3>
+            <input type="text" placeholder="Nombre, Apellido" />
+            <h3>Especialidad</h3>
+            <select>
+            	<option>Especialidad 1</option>
+                <option>Especialidad 2</option>
+                <option>Especialidad 3</option>
+            </select>
+            <input type="image" src="images/btn-buscar.jpg" class="btn-buscar"/>
+        </div>
+        <div class="cont-btns">
+        	<ul>
+            	<li><a href="#"><img src="images/ico-rexamenes.png" alt="icono"/><span>Resultado de Exámenes</span></a></li>
+            	<li><a href="#"><img src="images/ico-calculadora.png" alt="icono"/><span>Calculadora</span></a></li>
+                <li><a href="#"><img src="images/ico-serviciocliente.png" alt="icono"/><span>Servicio al Cliente</span></a></li>
+                <li><a href="#"><img src="images/ico-priauxilios.png" alt="icono"/><span>Primeros Auxilios</span></a></li>
+                <li><a href="#"><img src="images/ico-recetas.png" alt="icono"/><span>Recetas</span></a></li>
+                <li><a href="#"><img src="images/ico-trabaja.png" alt="icono"/><span>Trabaja con Nosotros</span></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Bienvenido al Complejo Médico más completo del Ecuador">
+<meta name="keywords" content="hospital,metropolitano,menús,superiores, salud, hospital, emergencia, médicos, medicina">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="shortcut icon" href="images/favicon.ico">
+<title>HOSPITAL METROPOLITANO</title>
+
+<link href="css/css-hospital.css" rel="stylesheet" type="text/css" />
+<link href="css/queries-hospital.css" rel="stylesheet" type="text/css" />
+<link href="css/fotorama.css" rel="stylesheet" type="text/css" />
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/fotorama.js"></script>
+
+<script>
+$(document).ready(function() {
+    $("#video-docs").click(function(){
+		$(".cont-video-doctores").fadeIn();
+		})
+	$("#btn-cerrar").click(function(){
+		$(".cont-video-doctores").fadeOut();
+		});	
+	/* SUBMENU */
+	$('#submenu-pag-internas li a').click(function(event){
+		var elem = $(this).next();
+		if(elem.is('ul')){
+			event.preventDefault();
+			$('#menu ul:visible').not(elem).slideUp();
+			elem.slideToggle();
+		}
+	});	
+});
+</script>
+
+</head>
+
+<body>
+<!-- HEADER - MENU -->
+<header class="h-metropolitano-int" >
+	<section class="cont-menu">
+    	<div class="logo-hm"><img src="images/logo-hm.png" alt="logo hospital metropolitano"/></div>
+        <nav class="nav-metropolitano">
+        	<ul class="nav-submenu">
+            	<li><a href="#">NOSOTROS</a>
+                	<ul class="nav-submenu1">
+                    	<li><a href="#">HISTORIA</a></li>
+                        <li><a href="#">MISIÓN Y VISIÓN</a></li>
+                        <li><a href="#">HOSPITAL EN CIFRAS</a></li>
+                        <li><a href="#">CONVENIOS</a></li>
+                        <li><a href="#">DERECHOS Y OBLIGACIONES</a></li>
+                        <li><a href="#">AUTORIDADES</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">SERVICIOS</a></li>
+                <li><a href="#">NUESTROS MÉDICOS</a>
+                	<ul class="nav-submenu1" id="n-medicos-submenu">
+                    	<li>DEPARTAMENTO DE:</li>
+                        <li><a href="#">MEDICINA INTERNA</a>
+                        	<ul class="nav-submenu2">
+                            	<li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a>
+                                	<ul class="nav-submenu3">
+                                    	<li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">CIRUGÍA</a></li>
+                        <li><a href="#">GINECOLOGÍA</a></li>
+                        <li><a href="#">PEDIATRIA</a></li>
+                        <li><a href="#">EMERGENCIA</a></li>
+                    </ul>	
+                </li>
+                <li><a href="#">EDUCACIÓN E INFORMACIÓN</a></li>
+                <li><a href="#">PACIENTES</a></li>
+                <li><a href="#">NOTICIAS</a></li>
+                <li><a href="#">BIENESTAR</a></li>
+            </ul>
+        </nav>
+        <div class="position-login">
+        	<div class="pos-login"><a href="#">LOGIN</a> / <a href="#">REGISTRATE</a></div>
+            <div class="pos-buscar"><input type="text" class="input-buscar"/></div>
+            <div class="pos-bnoticia">&nbsp;</div>
+        </div>
+    </section>
+</header>
+<!-- CONTENIDO PAG -->
+<section class="contenido-pagina">
+	<div class="contenido-interno">
+    	<!-- SUBMENU PAG INTERNAS -->
+        <div class="submenu-interno">
+        	<h1>Medicina Interna</h1>
+            <ul>
+            	<li class="selected-opc">Cardiología Pediátrica</li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+                <li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+                <li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+                <li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+            	<li><a href="#">Cardiología Pediátrica</a></li>
+            </ul>
+        </div>
+        <!-- -->
+        <div class="contenido-pag-internas">
+        	<h1>Revista Latidos</h1>
+            <!-- DOCTORES -->
+            <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+             <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+             <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+             <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+             <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+             <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+             <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+             <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+             <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+             <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+             <div class="thumb-doctor">
+            	<a href="#"><img src="images/doctores/thumb-doctor.jpg" alt="img revista"/></a>
+                <a href="#" class="nombre-doctor">Dr. Marcelo Recalde Hidrovo</a>
+            </div> 
+            
+            <!-- -->         
+        </div>
+        <!-- -->
+    </div>
+</section>
+<!-- BANNERS -->
+<section class="banner-promo">
+	<div class="info-promo">
+    	<div class="fotorama" data-width="100%" data-fit="cover" data-nav="none" data-transition="dissolve" data-loop="true" data-arrows="false" data-autoplay="7000">        	
+        	<img src="images/banners/banner.jpg" alt="banners metropolitano"/>
+			<img src="images/banners/banner2.jpg" alt="banners metropolitano"/>
+			<img src="images/banners/banner3.jpg" alt="banners metropolitano"/>
+        </div>
+    </div>
+    <div class="info-promo2">
+    	<div class="tit-promo2"><img src="images/tit-promo2.jpg" alt="tit promo"/><img src="images/banner-promo.jpg" alt="banner promocion"/></div>
+    </div>
+</section>
+<!-- CIERRE -->
+<section class="cierre-web">
+	<div class="cierre-tam">
+    	<!-- NOTICIAS -->
+    	<div class="noticias-home">
+        	<h2>NOTICIAS</h2>
+            <div class="cont-noticia">
+            	<img src="images/noticia1.jpg" alt="imagen noticia"/>
+                <div class="cont-info-noticias">
+                	<h2>HABITACIONES ELITE HABITACIONES ELITE</h2>
+                    <p>Es un importante examen, que sirve para descartar precozmente, durante el periodo neonatal...</p>
+               		<a href="#">LEER MÁS</a>
+                </div>
+            </div>
+            <div class="cont-noticia">
+            	<img src="images/noticia2.jpg" alt="imagen noticia"/>
+                <div class="cont-info-noticias">
+                	<h2>HABITACIONES ELITE HABITACIONES ELITE</h2>
+                    <p>Es un importante examen, que sirve para descartar precozmente, durante el periodo neonatal...</p>
+               		<a href="#">LEER MÁS</a>
+                </div>
+            </div>
+        </div>
+        <!-- BUSCADOR -->
+        <div class="cont-buscador">
+        	<h2>BUSCAR</h2>
+            <h3>Médico</h3>
+            <input type="text" placeholder="Nombre, Apellido" />
+            <h3>Especialidad</h3>
+            <select>
+            	<option>Especialidad 1</option>
+                <option>Especialidad 2</option>
+                <option>Especialidad 3</option>
+            </select>
+            <input type="image" src="images/btn-buscar.jpg" class="btn-buscar"/>
+        </div>
+        <div class="cont-btns">
+        	<ul>
+            	<li><a href="#"><img src="images/ico-rexamenes.png" alt="icono"/><span>Resultado de Exámenes</span></a></li>
+            	<li><a href="#"><img src="images/ico-calculadora.png" alt="icono"/><span>Calculadora</span></a></li>
+                <li><a href="#"><img src="images/ico-serviciocliente.png" alt="icono"/><span>Servicio al Cliente</span></a></li>
+                <li><a href="#"><img src="images/ico-priauxilios.png" alt="icono"/><span>Primeros Auxilios</span></a></li>
+                <li><a href="#"><img src="images/ico-recetas.png" alt="icono"/><span>Recetas</span></a></li>
+                <li><a href="#"><img src="images/ico-trabaja.png" alt="icono"/><span>Trabaja con Nosotros</span></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

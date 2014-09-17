@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Bienvenido al Complejo Médico más completo del Ecuador">
+<meta name="keywords" content="hospital,metropolitano,menús,superiores, salud, hospital, emergencia, médicos, medicina">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="shortcut icon" href="images/favicon.ico">
+<title>HOSPITAL METROPOLITANO</title>
+
+<link href="css/css-hospital.css" rel="stylesheet" type="text/css" />
+<link href="css/queries-hospital.css" rel="stylesheet" type="text/css" />
+<link href="css/fotorama.css" rel="stylesheet" type="text/css" />
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/fotorama.js"></script>
+
+<script>
+$(document).ready(function() {
+	/* SUBMENU */
+	$('#submenu-pag-internas li a').click(function(event){
+		var elem = $(this).next();
+		if(elem.is('ul')){
+			event.preventDefault();
+			$('#menu ul:visible').not(elem).slideUp();
+			elem.slideToggle();
+		}
+	});	
+	/* CALCULADORA */
+	$("#btn-controlepeso").click(function(){
+		$("#cont-embarazo").hide();
+		$("#cont-peso").fadeIn();
+		});
+	$("#btn-embarazo").click(function(){
+		$("#cont-peso").hide();
+		$("#cont-embarazo").fadeIn();
+		});	
+});
+</script>
+
+</head>
+
+<body>
+<!-- HEADER - MENU -->
+<header class="h-metropolitano-int" >
+	<section class="cont-menu">
+    	<div class="logo-hm"><img src="images/logo-hm.png" alt="logo hospital metropolitano"/></div>
+        <nav class="nav-metropolitano">
+        	<ul class="nav-submenu">
+            	<li><a href="#">NOSOTROS</a>
+                	<ul class="nav-submenu1">
+                    	<li><a href="#">HISTORIA</a></li>
+                        <li><a href="#">MISIÓN Y VISIÓN</a></li>
+                        <li><a href="#">HOSPITAL EN CIFRAS</a></li>
+                        <li><a href="#">CONVENIOS</a></li>
+                        <li><a href="#">DERECHOS Y OBLIGACIONES</a></li>
+                        <li><a href="#">AUTORIDADES</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">SERVICIOS</a></li>
+                <li><a href="#">NUESTROS MÉDICOS</a>
+                	<ul class="nav-submenu1" id="n-medicos-submenu">
+                    	<li>DEPARTAMENTO DE:</li>
+                        <li><a href="#">MEDICINA INTERNA</a>
+                        	<ul class="nav-submenu2">
+                            	<li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a>
+                                	<ul class="nav-submenu3">
+                                    	<li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                        <li><a href="#">Bernardo Andres Sandoval Cordova</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                                <li><a href="#">Cardiología Pediátrica</a></li>
+                                <li><a href="#">Cardiología</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">CIRUGÍA</a></li>
+                        <li><a href="#">GINECOLOGÍA</a></li>
+                        <li><a href="#">PEDIATRIA</a></li>
+                        <li><a href="#">EMERGENCIA</a></li>
+                    </ul>	
+                </li>
+                <li><a href="#">EDUCACIÓN E INFORMACIÓN</a></li>
+                <li><a href="#">PACIENTES</a></li>
+                <li><a href="#">NOTICIAS</a></li>
+                <li><a href="#">BIENESTAR</a></li>
+            </ul>
+        </nav>
+        <div class="position-login">
+        	<div class="pos-login"><a href="#">LOGIN</a> / <a href="#">REGISTRATE</a></div>
+            <div class="pos-buscar"><input type="text" class="input-buscar"/></div>
+            <div class="pos-bnoticia">&nbsp;</div>
+        </div>
+    </section>
+</header>
+<!-- CONTENIDO PAG -->
+<section class="contenido-pagina">
+	<div class="contenido-interno">
+    	<div class="up-calculadora">
+        	<h1>CALCULADORA</h1>
+            <ul>
+            	<li><a href="javascript:void(0);" id="btn-controlepeso">CONTROLE SU PESO</a></li>
+                <li><a href="javascript:void(0);" id="btn-embarazo">EMBARAZO</a></li>
+            </ul>
+        </div>
+        <div id="cont-peso">
+            <h1>Cálculo del índice de masa corporal</h1>
+            <p class="p-calculadora">Compruebe si su peso es el apropiado para su edad, sexo, peso y altura.</p>
+            <div class="partder-calculadora">
+                <h3>Su peso en kg (utilice . para los decimales):</h3>
+                <input type="text" placeholder="Su peso (kg)" />
+                <h3>Su altura en metros (utilice . para los decimales):</h3>
+                <input type="text" placeholder="Su altura (m)" />
+                <h3>Su sexo:</h3>
+                <select>
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                </select>
+                <input type="submit" value="Calcular IMC y Peso Ideal" class="btn-buscar"/>
+                <p class="p-calculadora2">
+                    <strong>Importante:</strong><br/>
+                    - Debe pesarse con la menor ropa posible, sin zapatos y antes de comer.<br/>
+                    - La altura debe tomarse con la espalda totalmente recta y la planta de los pies perfectamente apoyada sobre el suelo.
+                </p>
+            </div>
+            <div class="partizq-calculadora">
+                <h1>RESULTADO</h1>
+                <p><strong>Su Índice de masa corporal:</strong> 21.67</p>
+                <p><strong>Interpretación:</strong> Normal</p>
+                <p><strong>Su Peso Ideal:</strong> Entre 54.45 y 68.06 kg</p>
+            </div>
+        </div>
+        <div id="cont-embarazo">
+            <h1>Calculadora de Embarazo</h1>
+            <p class="p-calculadora">Compruebe cuando ocurrió la concepción. Seleccione la fecha del primer día de
+su último periodo menstrual:</p>
+            <div class="partder-calculadora2">
+                ESPACIO CALENDARIO
+                <P><strong>Se seleccionó la fecha:</strong> 9 de Sep de 2014</P>
+            </div>
+            <div class="partizq-calculadora">
+                <h1>RESULTADO</h1>
+                <p><strong>La concepción probablemente ocurrió alrededor de:</strong> 23 de Septiembre de 2014
+(Aproximadamente dos semanas después del inicio de su último periodo menstrual)</p>
+				<p><strong>El periodo de mayor riesgos para defectos del nacimiento:</strong> 14 de Octubre de 2014 a 18 de Noviembre de 2014</p>
+				<p>Cinco a diez semanas de gestación (el número de semanas desde su último periodo menstrual)</p>
+                <p><strong>Edad del Bebé:</strong></p>
+                <p>
+                <strong>5 semanas de embarazo:</strong> 14 de Octubre de 2014<br/>
+                <strong>10 semanas de embarazo:</strong> 18 de Noviembre de 2014<br/>
+                <strong>11-14 semanas de embarazo:</strong> 2 de Diciembre de 2014<br/>
+                <strong> 23 semanas de embarazo:</strong> 17 de Febrero de 2015<br/>
+                <strong>27 semanas de embarazo:</strong> 17 de Marzo de 2015<br/>
+                <strong>40 semanas de embarazo:</strong> 16 de Junio de 2015
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BANNERS -->
+<section class="banner-promo">
+	<div class="info-promo">
+    	<div class="fotorama" data-width="100%" data-fit="cover" data-nav="none" data-transition="dissolve" data-loop="true" data-arrows="false" data-autoplay="7000">        	
+        	<img src="images/banners/banner.jpg" alt="banners metropolitano"/>
+			<img src="images/banners/banner2.jpg" alt="banners metropolitano"/>
+			<img src="images/banners/banner3.jpg" alt="banners metropolitano"/>
+        </div>
+    </div>
+    <div class="info-promo2">
+    	<div class="tit-promo2"><img src="images/tit-promo2.jpg" alt="tit promo"/><img src="images/banner-promo.jpg" alt="banner promocion"/></div>
+    </div>
+</section>
+<!-- CIERRE -->
+<section class="cierre-web">
+	<div class="cierre-tam">
+    	<!-- NOTICIAS -->
+    	<div class="noticias-home">
+        	<h2>NOTICIAS</h2>
+            <div class="cont-noticia">
+            	<img src="images/noticia1.jpg" alt="imagen noticia"/>
+                <div class="cont-info-noticias">
+                	<h2>HABITACIONES ELITE HABITACIONES ELITE</h2>
+                    <p>Es un importante examen, que sirve para descartar precozmente, durante el periodo neonatal...</p>
+               		<a href="#">LEER MÁS</a>
+                </div>
+            </div>
+            <div class="cont-noticia">
+            	<img src="images/noticia2.jpg" alt="imagen noticia"/>
+                <div class="cont-info-noticias">
+                	<h2>HABITACIONES ELITE HABITACIONES ELITE</h2>
+                    <p>Es un importante examen, que sirve para descartar precozmente, durante el periodo neonatal...</p>
+               		<a href="#">LEER MÁS</a>
+                </div>
+            </div>
+        </div>
+        <!-- BUSCADOR -->
+        <div class="cont-buscador">
+        	<h2>BUSCAR</h2>
+            <h3>Médico</h3>
+            <input type="text" placeholder="Nombre, Apellido" />
+            <h3>Especialidad</h3>
+            <select>
+            	<option>Especialidad 1</option>
+                <option>Especialidad 2</option>
+                <option>Especialidad 3</option>
+            </select>
+            <input type="image" src="images/btn-buscar.jpg" class="btn-buscar"/>
+        </div>
+        <div class="cont-btns">
+        	<ul>
+            	<li><a href="#"><img src="images/ico-rexamenes.png" alt="icono"/><span>Resultado de Exámenes</span></a></li>
+            	<li><a href="#"><img src="images/ico-calculadora.png" alt="icono"/><span>Calculadora</span></a></li>
+                <li><a href="#"><img src="images/ico-serviciocliente.png" alt="icono"/><span>Servicio al Cliente</span></a></li>
+                <li><a href="#"><img src="images/ico-priauxilios.png" alt="icono"/><span>Primeros Auxilios</span></a></li>
+                <li><a href="#"><img src="images/ico-recetas.png" alt="icono"/><span>Recetas</span></a></li>
+                <li><a href="#"><img src="images/ico-trabaja.png" alt="icono"/><span>Trabaja con Nosotros</span></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

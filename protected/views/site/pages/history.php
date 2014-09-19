@@ -15,7 +15,7 @@
         <!-- -->
         <div class="contenido-pag-internas">
         	<h1>Historia</h1>
-            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/img-hospital.jpg" alt="imagen hospital"/>
+            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/HISTORIA.png" alt="imagen hospital"/>
             <span>
             En 1977 un grupo de prestigiosos médicos visionarios gestó con gran optimismo la idea de construir, en la ciudad de Quito, un centro hospitalario con estándares internacionales. Dos años más tarde, en 1979, en una alianza estratégica e histórica con la compañía norteamericana AMI, American Medical International, se constituye Conclina C.A. que nos conduciría a dar inicio a un proyecto médico hospitalario que transformaría la atención médica en el país.<br/><br/>
 En 1982 empieza la construcción del hospital y tres años más tarde, el 14 de noviembre de 1985, el Hospital Metropolitano abrió sus puertas a la comunidad, iniciando una nueva era en la medicina en el país, creando un nuevo modelo de gestión hospitalaria, al tiempo que se erigía en un dinámico polo de desarrollo de la ciudad.<br/><br/>

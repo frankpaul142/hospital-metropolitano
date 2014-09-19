@@ -15,7 +15,7 @@
         <!-- -->
         <div class="contenido-pag-internas">
         	<h1>AUTORIDADES</h1>
-            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/img-autoridades.jpg" alt="imagen hospital"/>
+            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/AUTORIDADES.png" alt="imagen hospital"/>
             <table width="100%" cellpadding="0" cellspacing="0">
             	
                 <?php foreach($authorities as $authority): ?>

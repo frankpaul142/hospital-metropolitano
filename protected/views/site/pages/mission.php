@@ -15,7 +15,7 @@
         <!-- -->
         <div class="contenido-pag-internas">
         	<h1>MISIÓN Y VISIÓN</h1>
-            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/img-hospital.jpg" alt="imagen hospital"/>
+            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/MISIONYVISION.png" alt="imagen hospital"/>
             <span>
             <strong>MISION:</strong><br/>
 En el mejor hospital del Ecuador, cuidamos la vida de nuestros pacientes y luchamos día a día por mejorar su salud.<br/><br/>

@@ -16,7 +16,7 @@
         <!-- -->
         <div class="contenido-pag-internas">
         	<h1>Convenios</h1>
-            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/img-hospital.jpg" alt="imagen hospital"/>
+            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/CONVENIOS.png" alt="imagen hospital"/>
             
            
 <strong>CONVENIOS CON IMPORTANTES</strong><br><strong>CENTROS MÉDICOS INTERNACIONALES</strong><br/><br/><ul><li>Cleveland Clinic</li><li>Mayo Clinic</li><li>Universidad de Texas</li><li>Universidad de Alabama</li><li>Mount Sinai Hospital</li><li>Fundación Santa Fé de Bogotá</li><li>Fundación Universitaria del Area Andina (Colombia)</li><li>Universidad de Brest (Francia)</li><li>Clínica Las Condes de Chile</li><li>Hospital de Clínicas Caracas</li>

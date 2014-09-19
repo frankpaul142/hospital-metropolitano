@@ -15,7 +15,7 @@
         <!-- -->
         <div class="contenido-pag-internas">
         	<h1>Hospital en cifras</h1>
-            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/img-hospital.jpg" alt="imagen hospital"/><br/><br/>
+            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/HOSPITALENCUFRAS.png" alt="imagen hospital"/><br/><br/>
             <table cellspacing="0" cellpadding="0">
 <colgroup><col width="610">
 <col width="232">

@@ -15,7 +15,7 @@
         <!-- -->
         <div class="contenido-pag-internas">
         	<h1>Derechos y Obligaciones del Paciente</h1>
-            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/img-hospital.jpg" alt="imagen hospital"/>
+            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/DERECHOSYOBLUGACIONES.png" alt="imagen hospital"/>
             
           
 <h2>Derechos del Paciente</h2><br>

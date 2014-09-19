@@ -60,6 +60,10 @@
         $services = Service::model()->findAllbyAttributes(array('type' => 'SERVICE'));
         ?>
         <header id='head' class="h-metropolitano-int" >
+        	<div class="lenguages-t">
+            	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/esp.gif" alt="lenguaje ingles" class="idioma-selected"/></a>
+                <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/eng.gif" alt="lenguaje ingles"/></a>
+            </div>
             <section class="cont-menu">
                 <div class="logo-hm"><a href='<?php echo Yii::app()->request->getBaseUrl(true); ?>'><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/logo-hm.png" alt="logo hospital metropolitano"/></a></div>
                 <div class="btn-mobil"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/btn-mobil.jpg" alt="btn mobile"/></div>

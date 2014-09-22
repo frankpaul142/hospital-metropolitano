@@ -2,19 +2,19 @@
 	<div class="contenido-interno">
     	<!-- SUBMENU PAG INTERNAS -->
         <div class="submenu-interno">
-        	<h1>Nosotros</h1>
+        	<h1><?php echo Yii::t('menus','menu_nosotros'); ?></h1>
             <ul>
-            <li><a href="<?php echo $this->createUrl('site/page',array('view'=>'history')) ?>">HISTORIA</a></li>
-                        <li><a href="<?php echo $this->createUrl('site/page',array('view'=>'mission')) ?>">MISIÓN Y VISIÓN</a></li>
-                        <li><a href="<?php echo $this->createUrl('site/page',array('view'=>'crifas')) ?>">HOSPITAL EN CRIFAS</a></li>                       
-                        <li ><a href="<?php echo $this->createUrl('site/page',array('view'=>'conventions')) ?>">CONVENIOS</a></li>
-                        <li><a href="<?php echo $this->createUrl('site/page',array('view'=>'rights')) ?>">DERECHOS Y OBLIGACIONES</a></li>
-                         <li class="selected-opc">AUTORIDADES</li>
+                <li><a href="<?php echo $this->createUrl('site/page',array('view'=>'history')) ?>"><?php echo Yii::t('menus','submenu_historia'); ?></a></li>
+                <li><a href="<?php echo $this->createUrl('site/page',array('view'=>'mission')) ?>"><?php echo Yii::t('menus','submenu_mision'); ?></a></li>
+                <li><a href="<?php echo $this->createUrl('site/numbers',array()) ?>"><?php echo Yii::t('menus','submenu_cifras'); ?></a></li>                       
+                <li ><a href="<?php echo $this->createUrl('site/page',array('view'=>'conventions')) ?>"><?php echo Yii::t('menus','submenu_convenios'); ?></a></li>
+                <li><a href="<?php echo $this->createUrl('site/page',array('view'=>'rights')) ?>"><?php echo Yii::t('menus','submenu_derechos'); ?></a></li>
+                <li class="selected-opc"><?php echo Yii::t('menus','submenu_autoridades'); ?></li>
             </ul>
         </div>
         <!-- -->
         <div class="contenido-pag-internas">
-        	<h1><?php echo Yii::t('authorities','authority_title'); ?></h1>
+        	<h1><?php echo Yii::t('menus','submenu_autoridades'); ?></h1>
             <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/AUTORIDADES.png" alt="imagen hospital"/>
             <table width="100%" cellpadding="0" cellspacing="0">
             	

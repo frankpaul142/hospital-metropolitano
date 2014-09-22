@@ -42,6 +42,12 @@ class SiteController extends Controller
            $authorities = Authority::model()->findAll();
            $this->render('authority',array('authorities'=>$authorities));
        }
+
+       public function actionNumbers(){
+           
+           $numbers = Numbers::model()->findAll();
+           $this->render('numbers',array('numbers'=>$numbers));
+       }
         
         public function actionSearch()
 	{
@@ -162,21 +168,17 @@ class SiteController extends Controller
         }
         echo $sqlsm;
         echo $sqlm;
-        echo "<br>";
-        /*$services = Service::model()->findAll();
+        echo "<br/>";
+        $numbers = Numbers::model()->findAll();
         $sqlsm="";
         $sqlm="";
-        foreach ($services as $s) {
-            $sqlsm.="insert into `sourcemessage` values (".$i.",'services','service_".htmlentities($s->title, ENT_QUOTES,'UTF-8')."_title');<br>";
-            $sqlm.="insert into `message` values (".$i.",'es','".htmlentities($s->title, ENT_QUOTES,'UTF-8')."');<br>";
-            $sqlm.="insert into `message` values (".$i++.",'en','');<br>";
-            if(!is_null($s->description)){
-                $sqlsm.="insert into `sourcemessage` values (".$i.",'services','service_".htmlentities($s->title, ENT_QUOTES,'UTF-8')."_description');<br>";
-                $sqlm.="insert into `message` values (".$i.",'es','".htmlentities($s->description, ENT_QUOTES,'UTF-8')."');<br>";
-                $sqlm.="insert into `message` values (".$i++.",'en','');<br>";
-            }
+        $i=34;
+        foreach ($numbers as $s) {
+            $sqlsm.="insert into `SourceMessage` values (".$i.",'numbers','numbers_".htmlentities($s->id, ENT_QUOTES,'UTF-8')."_field');<br>";
+            $sqlm.="insert into `Message` values (".$i.",'es','".htmlentities($s->field, ENT_QUOTES,'UTF-8')."');<br>";
+            $sqlm.="insert into `Message` values (".$i++.",'en','');<br>";
         }
         echo $sqlsm;
-        echo $sqlm;*/
+        echo $sqlm;
     }
 }

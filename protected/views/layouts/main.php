@@ -37,7 +37,7 @@
                 });
                 $('.lenguaje-btn').click(function() {
                     console.log($(this).attr('id'));
-                    var form = $('<form action="setLanguage" method="post">' +
+                    var form = $('<form action="<?php echo Yii::app()->request->getBaseUrl(true); ?>/site/setLanguage" method="post">' +
                         '<input type="hidden" name="language" value="' + $(this).attr('id') + '" />' +
                         '<input type="hidden" name="url" value="' + document.URL + '" />' +
                         '</form>');
@@ -70,10 +70,10 @@
         ?>
         <header id='head' class="h-metropolitano-int" >
         	<div class="lenguages-t">
-            	<a href="#">
+            	<a <?php if($currentLang!='es') echo 'href="#"' ?>>
                     <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/esp.gif" id="es" class="lenguaje-btn<?php if($currentLang=='es') echo ' idioma-selected'; ?>" />
                 </a>
-                <a href="#">
+                <a <?php if($currentLang!='en') echo 'href="#"' ?>>
                     <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/eng.gif" id="en" class="lenguaje-btn<?php if($currentLang=='en') echo ' idioma-selected'; ?>" />
                 </a>
             </div>
@@ -83,17 +83,17 @@
                 <!-- -->
                 <nav class="nav-metropolitano">
                     <ul class="nav-submenu">
-                        <li><a href="#">Nosotros</a>
+                        <li><a href="#"><?php echo Yii::t('menus','menu_nosotros'); ?></a>
                             <ul class="nav-submenu1">
-                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'history')) ?>">Historia</a></li>
-                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'mission')) ?>">Misión y Visión</a></li>
-                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'crifas')) ?>">Hospital en Crifas</a></li>
-                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'conventions')) ?>">Convenios</a></li>
-                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'rights')) ?>">Derechos y Obligaciones</a></li>
-                                <li><a href="<?php echo $this->createUrl('site/Authorities', array()) ?>">Autoridades</a></li>
+                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'history')) ?>"><?php echo Yii::t('menus','submenu_historia'); ?></a></li>
+                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'mission')) ?>"><?php echo Yii::t('menus','submenu_mision'); ?></a></li>
+                                <li><a href="<?php echo $this->createUrl('site/numbers', array()) ?>"><?php echo Yii::t('menus','submenu_cifras'); ?></a></li>
+                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'conventions')) ?>"><?php echo Yii::t('menus','submenu_convenios'); ?></a></li>
+                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'rights')) ?>"><?php echo Yii::t('menus','submenu_derechos'); ?></a></li>
+                                <li><a href="<?php echo $this->createUrl('site/Authorities', array()) ?>"><?php echo Yii::t('menus','submenu_autoridades'); ?></a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Servicios</a>
+                        <li><a href="#"><?php echo Yii::t('menus','menu_servicios'); ?></a>
                             <ul class="nav-submenu1">
 
 <?php foreach ($services as $service): ?>
@@ -115,7 +115,7 @@
 
 
                         </li>
-                        <li><a href="#">Nuestros Médicos</a>
+                        <li><a href="#"><?php echo Yii::t('menus','menu_medicos'); ?></a>
                             <ul class="nav-submenu1">
                                 <li>Departamento de:</li>
 <?php foreach ($departments as $department): ?>
@@ -132,26 +132,26 @@
                                         <?php endforeach; ?>
                             </ul>	
                         </li>
-                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/view/id/8/education/1">Educación e Información</a></li>
-                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/event/view/id/1">Eventos</a></li>
-                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/news">Noticias</a></li>
-                        <li><a href="http://laboratorio.hmetro.med.ec/">Bienestar</a></li>
+                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/view/id/8/education/1"><?php echo Yii::t('menus','menu_educacion'); ?></a></li>
+                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/event/view/id/1"><?php echo Yii::t('menus','menu_eventos'); ?></a></li>
+                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/news"><?php echo Yii::t('menus','menu_noticias'); ?></a></li>
+                        <li><a href="http://laboratorio.hmetro.med.ec/"><?php echo Yii::t('menus','menu_bienestar'); ?></a></li>
                     </ul>
                 </nav>
                 <!-- -->
                 <section class="menu-tablets">
                     <ul class="nav-submenu-mob">
-                        <li><a href="#">Nosotros</a>
+                        <li><a href="#"><?php echo Yii::t('menus','menu_nosotros'); ?></a>
                             <ul class="nav-submenu1-mob">
-                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'history')) ?>">Historia</a></li>
-                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'mission')) ?>">Misión y Visión</a></li>
-                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'crifas')) ?>">Hospital en Crifas</a></li>
-                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'conventions')) ?>">Convenios</a></li>
-                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'rights')) ?>">Derechos y Obligaciones</a></li>
-                                <li><a href="<?php echo $this->createUrl('site/Authorities', array()) ?>">Autoridades</a></li>
+                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'history')) ?>"><?php echo Yii::t('menus','submenu_historia'); ?></a></li>
+                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'mission')) ?>"><?php echo Yii::t('menus','submenu_mision'); ?></a></li>
+                                <li><a href="<?php echo $this->createUrl('site/numbers', array()) ?>"><?php echo Yii::t('menus','submenu_cifras'); ?></a></li>
+                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'conventions')) ?>"><?php echo Yii::t('menus','submenu_convenios'); ?></a></li>
+                                <li><a href="<?php echo $this->createUrl('site/page', array('view' => 'rights')) ?>"><?php echo Yii::t('menus','submenu_derechos'); ?></a></li>
+                                <li><a href="<?php echo $this->createUrl('site/Authorities', array()) ?>"><?php echo Yii::t('menus','submenu_autoridades'); ?></a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Servicios</a>
+                        <li><a href="#"><?php echo Yii::t('menus','menu_servicios'); ?></a>
                             <ul class="nav-submenu1-mob">
 
 <?php foreach ($services as $service): ?>
@@ -173,7 +173,7 @@
 
 
                         </li>
-                        <li><a href="#">Nuestros Médicos</a>
+                        <li><a href="#"><?php echo Yii::t('menus','menu_medicos'); ?></a>
                             <ul class="nav-submenu1-mob">
                                 <li>Departamento de:</li>
 <?php foreach ($departments as $department): ?>
@@ -190,10 +190,10 @@
                                         <?php endforeach; ?>
                             </ul>	
                         </li>
-                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/view/id/8/education/1">Educación e Información</a></li>
-                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/event/view/id/1">Eventos</a></li>
-                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/news">Noticias</a></li>
-                        <li><a href="http://laboratorio.hmetro.med.ec/">Bienestar</a></li>
+                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/view/id/8/education/1"><?php echo Yii::t('menus','menu_educacion'); ?></a></li>
+                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/event/view/id/1"><?php echo Yii::t('menus','menu_eventos'); ?></a></li>
+                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/news"><?php echo Yii::t('menus','menu_noticias'); ?></a></li>
+                        <li><a href="http://laboratorio.hmetro.med.ec/"><?php echo Yii::t('menus','menu_bienestar'); ?></a></li>
                     </ul>
                 </section>
                 <!-- -->

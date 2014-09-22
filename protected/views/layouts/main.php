@@ -35,6 +35,14 @@
                         elem.slideToggle();
                     }
                 });
+                $('.lenguaje-btn').click(function() {
+                    console.log($(this).attr('id'));
+                    var form = $('<form action="setLanguage" method="post">' +
+                        '<input type="hidden" name="language" value="' + $(this).attr('id') + '" />' +
+                        '<input type="hidden" name="url" value="' + document.URL + '" />' +
+                        '</form>');
+                    $(form).submit();
+                });
             });
         </script>
     </head>
@@ -58,11 +66,16 @@
 // format models as $key=>$value with listData
         $list = CHtml::listData($specialities, 'id', 'name');
         $services = Service::model()->findAllbyAttributes(array('type' => 'SERVICE'));
+        $currentLang = Yii::app()->language;
         ?>
         <header id='head' class="h-metropolitano-int" >
         	<div class="lenguages-t">
-            	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/esp.gif" alt="lenguaje ingles" class="idioma-selected"/></a>
-                <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/eng.gif" alt="lenguaje ingles"/></a>
+            	<a href="#">
+                    <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/esp.gif" id="es" class="lenguaje-btn<?php if($currentLang=='es') echo ' idioma-selected'; ?>" />
+                </a>
+                <a href="#">
+                    <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/eng.gif" id="en" class="lenguaje-btn<?php if($currentLang=='en') echo ' idioma-selected'; ?>" />
+                </a>
             </div>
             <section class="cont-menu">
                 <div class="logo-hm"><a href='<?php echo Yii::app()->request->getBaseUrl(true); ?>'><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/logo-hm.png" alt="logo hospital metropolitano"/></a></div>

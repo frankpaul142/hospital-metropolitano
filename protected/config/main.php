@@ -11,7 +11,7 @@ return array(
 	'name'=>'Hospital Metropolitano',
     'timeZone' => 'America/Guayaquil',
 	'language'=>'es',
-	'sourceLanguage'=>'es',
+	'sourceLanguage'=>'00',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -97,6 +97,9 @@ return array(
 				*/
 			),
 		),
+		'messages'=>array(
+            'class'=>'CDbMessageSource'
+        ),
 	),
 
 	// application-level parameters that can be accessed
@@ -105,5 +108,6 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'admin@hospitalmetropolitano.org.ec',
 	),
+	'behaviors' => array('ApplicationConfigBehavior')
 
 );

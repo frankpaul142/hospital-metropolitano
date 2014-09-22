@@ -141,4 +141,42 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	public function actionSetLanguage()
+    {
+        if (isset($_POST['language']))
+            Yii::app()->user->setState('applicationLanguage',$_POST['language']);
+        $this->redirect($_POST['url']);
+    }
+
+    public function actionTranslate()
+    {
+        $sqlsm="";
+        $sqlm="";
+        $i=0;
+        $authorities = Authority::model()->findAll();
+        foreach ($authorities as $r) {
+            $sqlsm.="insert into `SourceMessage` values (".$i.",'authorities','authority_".htmlentities($r->id, ENT_QUOTES,'UTF-8')."_charge');<br>";
+            $sqlm.="insert into `Message` values (".$i.",'es','".htmlentities($r->charge, ENT_QUOTES,'UTF-8')."');<br>";
+            $sqlm.="insert into `Message` values (".$i++.",'en','');<br>";
+        }
+        echo $sqlsm;
+        echo $sqlm;
+        echo "<br>";
+        /*$services = Service::model()->findAll();
+        $sqlsm="";
+        $sqlm="";
+        foreach ($services as $s) {
+            $sqlsm.="insert into `sourcemessage` values (".$i.",'services','service_".htmlentities($s->title, ENT_QUOTES,'UTF-8')."_title');<br>";
+            $sqlm.="insert into `message` values (".$i.",'es','".htmlentities($s->title, ENT_QUOTES,'UTF-8')."');<br>";
+            $sqlm.="insert into `message` values (".$i++.",'en','');<br>";
+            if(!is_null($s->description)){
+                $sqlsm.="insert into `sourcemessage` values (".$i.",'services','service_".htmlentities($s->title, ENT_QUOTES,'UTF-8')."_description');<br>";
+                $sqlm.="insert into `message` values (".$i.",'es','".htmlentities($s->description, ENT_QUOTES,'UTF-8')."');<br>";
+                $sqlm.="insert into `message` values (".$i++.",'en','');<br>";
+            }
+        }
+        echo $sqlsm;
+        echo $sqlm;*/
+    }
 }

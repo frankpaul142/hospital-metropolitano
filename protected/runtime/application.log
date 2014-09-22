@@ -6791,3 +6791,60 @@ Stack trace:
 REQUEST_URI=/hm/images/logo_03.png
 HTTP_REFERER=http://localhost/hm/
 ---
+2014/09/22 10:27:58 [error] [php] Undefined variable: currentLang (C:\Program Files (x86)\Zend\Apache2\htdocs\hm\protected\views\layouts\main.php:64)
+Stack trace:
+#0 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#1 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#2 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#4 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CBaseController.php(300): SiteController->endWidget()
+#5 C:\Program Files (x86)\Zend\Apache2\htdocs\hm\protected\views\layouts\column1.php(6): SiteController->endContent()
+#6 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CBaseController.php(126): require()
+#7 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#8 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CController.php(784): SiteController->renderFile()
+#9 C:\Program Files (x86)\Zend\Apache2\htdocs\hm\protected\controllers\SiteController.php(43): SiteController->render()
+#10 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionAuthorities()
+#11 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#13 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#14 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#15 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\Program Files (x86)\Zend\Apache2\htdocs\hm\index.php(13): CWebApplication->run()
+REQUEST_URI=/hm/site/Authorities
+in C:\Program Files (x86)\Zend\Apache2\htdocs\hm\protected\views\layouts\main.php (64)
+in C:\Program Files (x86)\Zend\Apache2\htdocs\hm\protected\views\layouts\column1.php (6)
+in C:\Program Files (x86)\Zend\Apache2\htdocs\hm\protected\controllers\SiteController.php (43)
+2014/09/22 10:39:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "site" solicitada.' in C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CController.php(270): CController->missingAction('site')
+#1 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('site')
+#2 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site/setLa...')
+#3 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Program Files (x86)\Zend\Apache2\htdocs\hm\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/hm/site/site/setLanguage
+HTTP_REFERER=http://localhost/hm/site/Authorities
+---
+2014/09/22 10:41:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "site" solicitada.' in C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CController.php(270): CController->missingAction('site')
+#1 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('site')
+#2 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site/setLa...')
+#3 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Program Files (x86)\Zend\Apache2\htdocs\hm\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/hm/site/site/setLanguage
+HTTP_REFERER=http://localhost/hm/site/Authorities
+---
+2014/09/22 10:42:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "site" solicitada.' in C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CController.php(270): CController->missingAction('site')
+#1 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('site')
+#2 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site/setLa...')
+#3 C:\Program Files (x86)\Zend\Apache2\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Program Files (x86)\Zend\Apache2\htdocs\hm\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/hm/site/site/setLanguage
+HTTP_REFERER=http://localhost/hm/site/Authorities
+---

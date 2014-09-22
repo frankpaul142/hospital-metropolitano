@@ -14,14 +14,15 @@
         </div>
         <!-- -->
         <div class="contenido-pag-internas">
-        	<h1>AUTORIDADES</h1>
+        	<h1><?php echo Yii::t('authorities','authority_title'); ?></h1>
             <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/AUTORIDADES.png" alt="imagen hospital"/>
             <table width="100%" cellpadding="0" cellspacing="0">
             	
-                <?php foreach($authorities as $authority): ?>
+                <?php foreach($authorities as $authority): 
+                $c='authority_'.$authority->id.'_charge'; ?>
                 <tr>
                 	<td class="border-tb"><?php echo $authority->name; ?></td>
-                    <td class="border-tb"><?php echo $authority->charge ?></td>
+                    <td class="border-tb"><?php echo Yii::t('authorities',$c); ?></td>
                      <td><a href="mailto:<?php echo $authority->email  ?>" class="btn-mails"><?php echo $authority->email ?></a></td>
                 </tr>
                <?php endforeach; ?>

@@ -96,21 +96,21 @@
                         <li><a href="#"><?php echo Yii::t('menus','menu_servicios'); ?></a>
                             <ul class="nav-submenu1">
 
-<?php foreach ($services as $service): ?>
-    <?php if ($service->modules) { ?>
-                                        <li><a href="#"><?php echo ucwords(strtolower($service->name)) ?></a>
-                                            <ul class="nav-submenu2">
-                                        <?php foreach ($service->modules as $module): ?>    
-                                                    <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/moduleview/<?php echo $module->id ?>"><?php echo ucwords(strtolower($module->name)) ?></a></li>
+                            <?php foreach ($services as $service):
+                                $n='services_'.$service->id.'_name'; ?>
+                                <?php if ($service->modules) { ?>
+                                    <li><a href="#"><?php echo ucwords(strtolower(Yii::t('services',$n))) ?></a>
+                                        <ul class="nav-submenu2">
+                                        <?php foreach ($service->modules as $module):
+                                            $m='module_'.$module->id.'_name'; ?>
+                                            <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/moduleview/<?php echo $module->id ?>"><?php echo ucwords(strtolower(Yii::t('services',$m))) ?></a></li>
                                         <?php endforeach; ?>
-                                            </ul>
-                                        </li>
-                                            <?php }else { ?>
-                                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/view/<?php echo $service->id ?>"><?php echo ucwords(strtolower($service->name)) ?></a>
-
-                                        </li>
-    <?php } ?>
-                                <?php endforeach; ?>
+                                        </ul>
+                                    </li>
+                                <?php }else { ?>
+                                    <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/view/<?php echo $service->id ?>"><?php echo ucwords(strtolower(Yii::t('services',$n))) ?></a></li>
+                                <?php } ?>
+                            <?php endforeach; ?>
                             </ul>
 
 
@@ -153,22 +153,21 @@
                         </li>
                         <li><a href="#"><?php echo Yii::t('menus','menu_servicios'); ?></a>
                             <ul class="nav-submenu1-mob">
-
-<?php foreach ($services as $service): ?>
-    <?php if ($service->modules) { ?>
-                                        <li><a href="#"><?php echo ucwords(strtolower($service->name)) ?></a>
-                                            <ul class="nav-submenu2-mob">
-        <?php foreach ($service->modules as $module): ?>    
-                                                    <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/moduleview/<?php echo $module->id ?>"><?php echo ucwords(strtolower($module->name)) ?></a></li>
+                            <?php foreach ($services as $service):
+                                $n='services_'.$service->id.'_name'; ?>
+                                <?php if ($service->modules) { ?>
+                                    <li><a href="#"><?php echo ucwords(strtolower(Yii::t('services',$n))) ?></a>
+                                        <ul class="nav-submenu2-mob">
+                                        <?php foreach ($service->modules as $module):
+                                            $m='module_'.$module->id.'_name'; ?>
+                                            <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/moduleview/<?php echo $module->id ?>"><?php echo ucwords(strtolower(Yii::t('services',$m))) ?></a></li>
                                         <?php endforeach; ?>
-                                            </ul>
-                                        </li>
-                                            <?php }else { ?>
-                                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/view/<?php echo $service->id ?>"><?php echo ucwords(strtolower($service->name)) ?></a>
-
-                                        </li>
-    <?php } ?>
-                                <?php endforeach; ?>
+                                        </ul>
+                                    </li>
+                                <?php }else { ?>
+                                    <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/view/<?php echo $service->id ?>"><?php echo ucwords(strtolower(Yii::t('services',$n))) ?></a></li>
+                                <?php } ?>
+                            <?php endforeach; ?>
                             </ul>
 
 

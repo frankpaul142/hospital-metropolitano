@@ -206,7 +206,7 @@
                         <div class="noticia-principal" >
                             <h1><?php echo ucwords($news->title) ?></h1>
                             <span><?php echo strip_tags(substr($news->description, 0, 60)) ?>...</span>
-                            <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/news/view/id/<?php echo $news->id ?>">LEER MÁS</a>
+                            <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/news/view/id/<?php echo $news->id ?>"><?php echo Yii::t('news','leer'); ?></a>
                         </div>
                     </div>
                 </div>
@@ -231,17 +231,18 @@
             <div class="cierre-tam">
                 <!-- NOTICIAS -->
                 <div class="noticias-home">
-                    <h2>NOTICIAS</h2>
-<?php foreach ($twonews as $new): ?>
+                    <h2><?php echo Yii::t('news','title'); ?></h2>
+                    <?php foreach ($twonews as $new):
+                        $n='news_'.$new->id.'_title'; ?>
                         <div class="cont-noticia">
-                            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/news/<?php echo $new->picture ?>" alt="imagen noticia"/>
+                            <img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/news/<?php echo $new->picture ?>" alt="imagen noticia" />
                             <div class="cont-info-noticias">
-                                <h2><?php echo strtoupper($new->title) ?></h2>
-                                <p><?php echo substr($news->description, 0, 60) ?>...</p>
-                                <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/news/view/id/<?php echo $new->id ?>">LEER MÁS</a>
+                                <h2><?php echo strtoupper(Yii::t('news',$n)); ?></h2>
+                                <p><?php echo strip_tags(substr(Yii::t('news','news_'.$new->id.'_description'), 0, 60)); ?>...</p>
+                                <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/news/view/id/<?php echo $new->id ?>"><?php echo Yii::t('news','leer'); ?></a>
                             </div>
                         </div>
-<?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
                 <!-- BUSCADOR -->
                 <div class="cont-buscador">
@@ -255,23 +256,23 @@ $form = $this->beginWidget('CActiveForm', array(
     ),
         ));
 ?>
-                    <h2>BUSCAR</h2>
-                    <h3>Médico</h3>
+                    <h2><?php echo Yii::t('general','buscar'); ?></h2>
+                    <h3><?php echo Yii::t('doctors','medico'); ?></h3>
                     <?php echo $form->textField($search, 'name', array('maxlength' => 254, 'placeholder' => 'Nombre, Apellido')); ?>
 
-                    <h3>Especialidad</h3>
+                    <h3><?php echo Yii::t('doctors','especialidad'); ?></h3>
                     <?php echo $form->dropDownList($search, 'speciality_id', $list, array('prompt' => 'Selecciona una especialidad')); ?>
                     <input type="image" src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/btn-buscar.jpg" class="btn-buscar"/>
 <?php $this->endWidget(); ?>
                 </div>
                 <div class="cont-btns">
                     <ul>
-                        <li><a href="http://laboratorio.hmetro.med.ec/" target="_blank"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-rexamenes.png" alt="icono"/><span>Resultado de Exámenes</span></a></li>
-                        <li><a href="<?php echo $this->createUrl('site/calculator', array()) ?>"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-calculadora.png" alt="icono"/><span>Calculadora</span></a></li>
-                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/interview"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-serviciocliente.png" alt="icono"/><span>Entrevistas</span></a></li>
-                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/FirstAid/view/id/1"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-priauxilios.png" alt="icono"/><span>Primeros Auxilios</span></a></li>
-                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/magazine"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-recetas.png" alt="icono"/><span>Revista Latidos</span></a></li>
-                        <li><a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-trabaja.png" alt="icono"/><span>Trabaja con Nosotros</span></a></li>
+                        <li><a href="http://laboratorio.hmetro.med.ec/" target="_blank"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-rexamenes.png" alt="icono"/><span><?php echo Yii::t('general','resultados_examenes'); ?></span></a></li>
+                        <li><a href="<?php echo $this->createUrl('site/calculator', array()) ?>"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-calculadora.png" alt="icono"/><span><?php echo Yii::t('general','calculadora'); ?></span></a></li>
+                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/interview"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-serviciocliente.png" alt="icono"/><span><?php echo Yii::t('general','entrevistas'); ?></span></a></li>
+                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/FirstAid/view/id/1"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-priauxilios.png" alt="icono"/><span><?php echo Yii::t('general','primeros_auxilios'); ?></span></a></li>
+                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/magazine"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-recetas.png" alt="icono"/><span><?php echo Yii::t('general','revista'); ?></span></a></li>
+                        <li><a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-trabaja.png" alt="icono"/><span><?php echo Yii::t('general','trabaja_con_nosotros'); ?></span></a></li>
                     </ul>
                 </div>
             </div>

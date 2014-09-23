@@ -258,10 +258,10 @@ $form = $this->beginWidget('CActiveForm', array(
 ?>
                     <h2><?php echo Yii::t('general','buscar'); ?></h2>
                     <h3><?php echo Yii::t('doctors','medico'); ?></h3>
-                    <?php echo $form->textField($search, 'name', array('maxlength' => 254, 'placeholder' => 'Nombre, Apellido')); ?>
+                    <?php echo $form->textField($search, 'name', array('maxlength' => 254, 'placeholder' => Yii::t('general','placeholder_nombre'))); ?>
 
                     <h3><?php echo Yii::t('doctors','especialidad'); ?></h3>
-                    <?php echo $form->dropDownList($search, 'speciality_id', $list, array('prompt' => 'Selecciona una especialidad')); ?>
+                    <?php echo $form->dropDownList($search, 'speciality_id', $list, array('prompt' => Yii::t('general','placeholder_especialidad'))); ?>
                     <input type="image" src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/btn-buscar.jpg" class="btn-buscar"/>
 <?php $this->endWidget(); ?>
                 </div>

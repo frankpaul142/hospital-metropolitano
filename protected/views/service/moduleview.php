@@ -6,7 +6,7 @@
             <h1><?php echo Yii::t('services','services_'.$model->service->id.'_name') ?></h1>
             <ul>
                 <?php foreach($model->service->modules as $z=> $module):
-                    $n='services_'.$module->id.'_name';
+                    $n='module_'.$module->id.'_name';
             	    if($module->id==$model->id) { ?>
                         <li class="selected-opc"><?php echo ucwords(strtolower(Yii::t('services',$n))); ?></li>
                     <?php }else{ ?>

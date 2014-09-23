@@ -209,5 +209,28 @@ class SiteController extends Controller
         }
         echo $sqlsm;
         echo $sqlm;
+        echo "<br/>";
+        $departments = Department::model()->findAll();
+        $sqlsm="";
+        $sqlm="";
+        $i=157;
+        foreach ($departments as $s) {
+            $sqlsm.="insert into `SourceMessage` values (".$i.",'departments','department_".htmlentities($s->id, ENT_QUOTES,'UTF-8')."_name');<br>";
+            $sqlm.="insert into `Message` values (".$i.",'es','".htmlentities($s->name, ENT_QUOTES,'UTF-8')."');<br>";
+            $sqlm.="insert into `Message` values (".$i++.",'en','');<br>";
+        }
+        echo $sqlsm;
+        echo $sqlm;
+        echo "<br/>";
+        $specialities = Speciality::model()->findAll();
+        $sqlsm="";
+        $sqlm="";
+        foreach ($specialities as $s) {
+            $sqlsm.="insert into `SourceMessage` values (".$i.",'departments','speciality_".htmlentities($s->id, ENT_QUOTES,'UTF-8')."_name');<br>";
+            $sqlm.="insert into `Message` values (".$i.",'es','".htmlentities($s->name, ENT_QUOTES,'UTF-8')."');<br>";
+            $sqlm.="insert into `Message` values (".$i++.",'en','');<br>";
+        }
+        echo $sqlsm;
+        echo $sqlm;
     }
 }

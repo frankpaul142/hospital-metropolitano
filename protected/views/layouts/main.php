@@ -117,19 +117,19 @@
                         </li>
                         <li><a href="#"><?php echo Yii::t('menus','menu_medicos'); ?></a>
                             <ul class="nav-submenu1">
-                                <li>Departamento de:</li>
-<?php foreach ($departments as $department): ?>
-    <?php foreach ($department->specialities as $speciality): ?>    
-                                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/<?php echo $speciality->id ?>"><?php echo ucwords(strtolower($department->name)) ?></a>
-        <?php break; ?>
-    <?php endforeach; ?>	
+                                <li><?php echo Yii::t('departments','title') ?></li>
+                                <?php foreach ($departments as $department):
+                                    $n='department_'.$department->id.'_name'; ?>
+                                    <li>
+                                        <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/<?php echo $department->specialities[0]->id ?>"><?php echo ucwords(strtolower(Yii::t('departments',$n))) ?></a>	
                                         <ul class="nav-submenu2">
-                                    <?php foreach ($department->specialities as $speciality): ?>    
-                                                <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/<?php echo $speciality->id ?>"><?php echo ucwords(strtolower($speciality->name)) ?></a></li>
+                                        <?php foreach ($department->specialities as $speciality):
+                                            $s='speciality_'.$speciality->id.'_name'; ?>
+                                            <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/<?php echo $speciality->id ?>"><?php echo ucwords(strtolower(Yii::t('departments',$s))) ?></a></li>
                                         <?php endforeach; ?>
                                         </ul>
                                     </li>
-                                        <?php endforeach; ?>
+                                <?php endforeach; ?>
                             </ul>	
                         </li>
                         <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/view/id/8/education/1"><?php echo Yii::t('menus','menu_educacion'); ?></a></li>
@@ -170,23 +170,22 @@
                             <?php endforeach; ?>
                             </ul>
 
-
                         </li>
                         <li><a href="#"><?php echo Yii::t('menus','menu_medicos'); ?></a>
                             <ul class="nav-submenu1-mob">
-                                <li>Departamento de:</li>
-<?php foreach ($departments as $department): ?>
-    <?php foreach ($department->specialities as $speciality): ?>    
-                                        <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/<?php echo $speciality->id ?>"><?php echo ucwords(strtolower($department->name)) ?></a>
-        <?php break; ?>
-    <?php endforeach; ?>	
+                                <li><?php echo Yii::t('departments','title') ?></li>
+                                <?php foreach ($departments as $department):
+                                    $n='department_'.$department->id.'_name'; ?>
+                                    <li>
+                                        <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/<?php echo $department->specialities[0]->id ?>"><?php echo ucwords(strtolower(Yii::t('departments',$n))) ?></a>   
                                         <ul class="nav-submenu2-mob">
-                                    <?php foreach ($department->specialities as $speciality): ?>    
-                                                <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/<?php echo $speciality->id ?>"><?php echo ucwords(strtolower($speciality->name)) ?></a></li>
+                                        <?php foreach ($department->specialities as $speciality):
+                                            $s='speciality_'.$speciality->id.'_name'; ?>
+                                            <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/<?php echo $speciality->id ?>"><?php echo ucwords(strtolower(Yii::t('departments',$s))) ?></a></li>
                                         <?php endforeach; ?>
                                         </ul>
                                     </li>
-                                        <?php endforeach; ?>
+                                <?php endforeach; ?>
                             </ul>	
                         </li>
                         <li><a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/service/view/id/8/education/1"><?php echo Yii::t('menus','menu_educacion'); ?></a></li>

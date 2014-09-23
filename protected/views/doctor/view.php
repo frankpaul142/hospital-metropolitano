@@ -2,7 +2,7 @@
 	<div class="contenido-interno">
         <div class="foto-doctores"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/doctores/<?php echo $model->picture ?>"/></div>
         <div class="info-doctor">
-            <h1><?php echo $model->speciality->name ?></h1>
+            <h1><?php echo Yii::t('departments','speciality_'.$model->speciality->id.'_name') ?></h1>
             <h2><?php echo $model->name ?></h2>
               <ul>
                   <li><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/ico-doc1.png" alt="ico doctor"/><span><?php echo $model->address ?></span></li>
@@ -11,13 +11,13 @@
               </ul>
               &nbsp;
               <br/>
-               <span class="tit-celeste">Titulado en:</span><br/>
+               <span class="tit-celeste"><?php echo Yii::t('doctors','titulado'); ?></span><br/>
                 <?php echo strtoupper($model->title) ?><br/><br/>
-                <span class="tit-celeste">Especialidades:</span><br/>
+                <span class="tit-celeste"><?php echo Yii::t('doctors','especialidades'); ?></span><br/>
                 <?php echo strtoupper($model->specialism) ?><br/><br/>
-                <span class="tit-celeste">Fellowship:</span><br/>
+                <span class="tit-celeste"><?php echo Yii::t('doctors','fellowship'); ?></span><br/>
                 <?php echo strtoupper($model->fellowship) ?>.<br/><br/>
-                <span class="tit-celeste">Intéreses:</span><br/>
+                <span class="tit-celeste"><?php echo Yii::t('doctors','intereses'); ?></span><br/>
                 <?php echo strtoupper($model->interests) ?>.
                 <br/><br/>
                 <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/id/<?php echo $model->speciality->id ?>" class="btn-volver"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/btn-volver.png" alt="btn-volver"/></a>

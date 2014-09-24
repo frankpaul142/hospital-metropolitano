@@ -14,11 +14,11 @@
                <span class="tit-celeste"><?php echo Yii::t('doctors','titulado'); ?></span><br/>
                 <?php echo strtoupper($model->title) ?><br/><br/>
                 <span class="tit-celeste"><?php echo Yii::t('doctors','especialidades'); ?></span><br/>
-                <?php echo strtoupper($model->specialism) ?><br/><br/>
+                <?php echo strtoupper(Yii::t('doctors','doctor_'.$model->id.'_specialty')); ?><br/><br/>
                 <span class="tit-celeste"><?php echo Yii::t('doctors','fellowship'); ?></span><br/>
-                <?php echo strtoupper($model->fellowship) ?>.<br/><br/>
+                <?php echo strtoupper(Yii::t('doctors','doctor_'.$model->id.'_fellowship')); ?>.<br/><br/>
                 <span class="tit-celeste"><?php echo Yii::t('doctors','intereses'); ?></span><br/>
-                <?php echo strtoupper($model->interests) ?>.
+                <?php echo strtoupper(Yii::t('doctors','doctor_'.$model->id.'_interests')); ?>.
                 <br/><br/>
                 <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/id/<?php echo $model->speciality->id ?>" class="btn-volver"><img src="<?php echo Yii::app()->request->getBaseUrl(true); ?>/images/btn-volver.png" alt="btn-volver"/></a>
             </div>

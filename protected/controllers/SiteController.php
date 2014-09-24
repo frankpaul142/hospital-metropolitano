@@ -275,27 +275,26 @@ class SiteController extends Controller
 		$result = mysqli_query($con,"SELECT id_mdc, especialidad_mdc, fellowship_mdc, intereses_mdc FROM medicos");
 		$j=406;
 		while($row = mysqli_fetch_array($result)) {
-		  $sqlm.="update `Message` set translation='".$row['especialidad_mdc']."' where id=".$j++." and language='en';<br>";
 		  $sqlm.="update `Message` set translation='".$row['fellowship_mdc']."' where id=".$j++." and language='en';<br>";
+		  $sqlm.="update `Message` set translation='".$row['especialidad_mdc']."' where id=".$j++." and language='en';<br>";
 		  $sqlm.="update `Message` set translation='".$row['intereses_mdc']."' where id=".$j++." and language='en';<br>";
 		}
 		mysqli_close($con);
 		echo $sqlm;
 		echo "<br/>";
+        $firstaids = FirstAid::model()->findAll();
+        $sqlsm="";
         $sqlm="";
-        $con=mysqli_connect("166.63.0.204","webcont_dba","lN_Q*PR]FN[E","webcont_hm");
-		// Check connection
-		if (mysqli_connect_errno()) {
-		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-		}
-		$result = mysqli_query($con,"SELECT especialidad_mdc, fellowship_mdc FROM medicos");
-		$j=406;
-		while($row = mysqli_fetch_array($result)) {
-		  $sqlm.="update `Message` set translation='".$row['fellowship_mdc']."' where id=".$j++." and language='en';<br>";
-		  $sqlm.="update `Message` set translation='".$row['especialidad_mdc']."' where id=".$j++." and language='en';<br>";
-		  $j++;
-		}
-		mysqli_close($con);
-		echo $sqlm;
+        $i=1263;
+        foreach ($firstaids as $s) {
+            $sqlsm.="insert into `SourceMessage` values (".$i.",'firstaid','".htmlentities($s->id, ENT_QUOTES,'UTF-8')."_title');<br>";
+            $sqlm.="insert into `Message` values (".$i.",'es','".htmlentities($s->title, ENT_QUOTES,'UTF-8')."');<br>";
+            $sqlm.="insert into `Message` values (".$i++.",'en','');<br>";
+            $sqlsm.="insert into `SourceMessage` values (".$i.",'firstaid','".htmlentities($s->id, ENT_QUOTES,'UTF-8')."_description');<br>";
+            $sqlm.="insert into `Message` values (".$i.",'es','".htmlentities($s->description, ENT_QUOTES,'UTF-8')."');<br>";
+            $sqlm.="insert into `Message` values (".$i++.",'en','');<br>";
+        }
+        echo $sqlsm;
+        echo $sqlm;
     }
 }

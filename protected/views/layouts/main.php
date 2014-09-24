@@ -61,11 +61,16 @@
 
         $news = News::model()->findByAttributes(array('status' => 'ACTIVE'), $criterianews2);
         $twonews = News::model()->findAllByAttributes(array('status' => 'ACTIVE'), $criterianews);
-        $specialities = Speciality::model()->findAll(
-                array('order' => 'id'));
-
-// format models as $key=>$value with listData
-        $list = CHtml::listData($specialities, 'id', 'name');
+        $specialities = Speciality::model()->findAll(array('order' => 'id'));
+        $especialidades=[];
+        foreach ($specialities as $i => $speciality) {
+            $aux=[];
+            $aux['id']=$speciality->id;
+            $n='speciality_'.$speciality->id.'_name';
+            $aux['name']=Yii::t('departments',$n);
+            array_push($especialidades, $aux);
+        }
+        $list = CHtml::listData($especialidades, 'id', 'name');
         $services = Service::model()->findAllbyAttributes(array('type' => 'SERVICE'));
         $currentLang = Yii::app()->language;
         ?>

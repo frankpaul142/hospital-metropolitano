@@ -3,18 +3,17 @@
 	<div class="contenido-interno">
     	<!-- SUBMENU PAG INTERNAS -->
       <div class="submenu-interno">
-        	<h1>Especialidades de los doctores</h1>
+        	<h1><?php echo Yii::t('doctors','especialidades_doctores'); ?></h1>
             <ul>
-                <?php foreach($dataProvider->getData() as $z=> $doctor): ?>
-            	
-                <li><a id='speciality_<?php echo $doctor->speciality->id ?>' href='<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/<?php echo $doctor->speciality->id ?>'><?php echo $doctor->speciality->name; ?></a></li>
-               
+                <?php foreach($dataProvider->getData() as $z=> $doctor):
+                    $n='speciality_'.$doctor->speciality->id.'_name'; ?>
+                    <li><a id='speciality_<?php echo $doctor->speciality->id ?>' href='<?php echo Yii::app()->request->getBaseUrl(true); ?>/speciality/view/<?php echo $doctor->speciality->id ?>'><?php echo Yii::t('departments',$n); ?></a></li>
             	<?php endforeach; ?>
             </ul>
         </div>
         <!-- -->
         <div class="contenido-pag-internas">
-        	<h1>Doctores</h1>
+        	<h1><?php echo Yii::t('doctors','doctores'); ?></h1>
           
            <?php foreach($dataProvider->getData() as $doctor): ?> 
                     <div class="thumb-doctor">

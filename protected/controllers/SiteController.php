@@ -247,5 +247,55 @@ class SiteController extends Controller
         }
         echo $sqlsm;
         echo $sqlm;
+        echo "<br/>";
+        $doctors = Doctor::model()->findAll();
+        $sqlsm="";
+        $sqlm="";
+        $i=406;
+        foreach ($doctors as $s) {
+            $sqlsm.="insert into `SourceMessage` values (".$i.",'doctors','doctor_".htmlentities($s->id, ENT_QUOTES,'UTF-8')."_specialty');<br>";
+            $sqlm.="insert into `Message` values (".$i.",'es','".htmlentities($s->specialism, ENT_QUOTES,'UTF-8')."');<br>";
+            $sqlm.="insert into `Message` values (".$i++.",'en','');<br>";
+            $sqlsm.="insert into `SourceMessage` values (".$i.",'doctors','doctor_".htmlentities($s->id, ENT_QUOTES,'UTF-8')."_fellowship');<br>";
+            $sqlm.="insert into `Message` values (".$i.",'es','".htmlentities($s->fellowship, ENT_QUOTES,'UTF-8')."');<br>";
+            $sqlm.="insert into `Message` values (".$i++.",'en','');<br>";
+            $sqlsm.="insert into `SourceMessage` values (".$i.",'doctors','doctor_".htmlentities($s->id, ENT_QUOTES,'UTF-8')."_interests');<br>";
+            $sqlm.="insert into `Message` values (".$i.",'es','".htmlentities($s->interests, ENT_QUOTES,'UTF-8')."');<br>";
+            $sqlm.="insert into `Message` values (".$i++.",'en','');<br>";
+        }
+        echo $sqlsm;
+        echo $sqlm;
+        echo "<br/>";
+        $sqlm="";
+        $con=mysqli_connect("166.63.0.204","webcont_dba","lN_Q*PR]FN[E","webcont_hm");
+		// Check connection
+		if (mysqli_connect_errno()) {
+		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		}
+		$result = mysqli_query($con,"SELECT id_mdc, especialidad_mdc, fellowship_mdc, intereses_mdc FROM medicos");
+		$j=406;
+		while($row = mysqli_fetch_array($result)) {
+		  $sqlm.="update `Message` set translation='".$row['especialidad_mdc']."' where id=".$j++." and language='en';<br>";
+		  $sqlm.="update `Message` set translation='".$row['fellowship_mdc']."' where id=".$j++." and language='en';<br>";
+		  $sqlm.="update `Message` set translation='".$row['intereses_mdc']."' where id=".$j++." and language='en';<br>";
+		}
+		mysqli_close($con);
+		echo $sqlm;
+		echo "<br/>";
+        $sqlm="";
+        $con=mysqli_connect("166.63.0.204","webcont_dba","lN_Q*PR]FN[E","webcont_hm");
+		// Check connection
+		if (mysqli_connect_errno()) {
+		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		}
+		$result = mysqli_query($con,"SELECT especialidad_mdc, fellowship_mdc FROM medicos");
+		$j=406;
+		while($row = mysqli_fetch_array($result)) {
+		  $sqlm.="update `Message` set translation='".$row['fellowship_mdc']."' where id=".$j++." and language='en';<br>";
+		  $sqlm.="update `Message` set translation='".$row['especialidad_mdc']."' where id=".$j++." and language='en';<br>";
+		  $j++;
+		}
+		mysqli_close($con);
+		echo $sqlm;
     }
 }

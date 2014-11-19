@@ -75,3 +75,5 @@ assets/72bb5bcb/jui/css/base/jquery.ui.accordion.css
 assets/72bb5bcb/jui/css/base/images/ui-bg_flat_75_ffffff_40x100.png
 assets/72bb5bcb/yiitab/jquery.yiitab.css
 nbproject/private/private.xml
+assets/
+protected/runtime/gii-1.1.14/ModelCode.php

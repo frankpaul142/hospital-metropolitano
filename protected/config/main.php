@@ -71,10 +71,10 @@ return array(
 		// uncomment the following to use a MySQL database
 	
 		'db'=>array(
-		'connectionString' => 'mysql:host=166.63.0.204;dbname=webcont_hm',
+		'connectionString' => 'mysql:host=localhost;dbname=webcont_hm',
 			'emulatePrepare' => true,
-			'username' => 'webcont_dba',
-			'password' => 'lN_Q*PR]FN[E',
+			'username' => 'root',
+			'password' => 'root',
 			'charset' => 'utf8',    
 		),
 		
